@@ -373,6 +373,11 @@ a {
     }
     .hero-image-wrapper {
         margin-left: 0;
+        margin-top: 2rem; /* Push image down from navbar */
+    }
+    .hero-exact-image {
+        height: 350px; /* Smaller image on mobile */
+        filter: none !important; /* Disable SVG distortion filter on mobile */
     }
 }
 
