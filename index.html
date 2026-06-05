@@ -287,13 +287,15 @@
         </div>
     </footer>
 
-    <!-- SVG Liquid Distortion Filter -->
-    <svg style="width: 0; height: 0; position: absolute; pointer-events: none;">
+    <!-- SVG Filters -->
+    <svg style="width:0;height:0;position:absolute;z-index:-1;" aria-hidden="true">
         <filter id="liquid">
-            <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="warp">
-                <animate attributeName="baseFrequency" values="0.015;0.025;0.015" dur="10s" repeatCount="indefinite" />
-            </feTurbulence>
-            <feDisplacementMap id="displacement" xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="displacement" />
+        </filter>
+        <filter id="sand-resolve">
+            <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="sandMap" />
         </filter>
     </svg>
 

@@ -141,6 +141,38 @@ document.addEventListener('DOMContentLoaded', () => {
         animateLiquid();
     }
 
+    // 7. Sand Resolve Effect on Logos
+    const logoGrid = document.querySelector('.logo-grid');
+    const sandMap = document.getElementById('sandMap');
+
+    if (logoGrid && sandMap) {
+        logoGrid.style.filter = "url('#sand-resolve')";
+        
+        window.addEventListener('scroll', () => {
+            const rect = logoGrid.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Calculate percentage based on how far the grid is scrolled into view
+            // Starts resolving when top hits the bottom of the screen, fully resolved midway up
+            let percentage = 1 - (rect.top - windowHeight / 3) / (windowHeight / 1.5);
+            percentage = Math.max(0, Math.min(1, percentage));
+            
+            // Inverse: 1 means fully distorted (sand), 0 means resolved
+            const distortion = 1 - percentage;
+            
+            const maxScale = 120; // Maximum grain spread
+            
+            // Only update DOM if there's distortion to save performance
+            if (distortion > 0) {
+                logoGrid.style.opacity = percentage;
+                sandMap.setAttribute('scale', distortion * maxScale);
+            } else {
+                logoGrid.style.opacity = 1;
+                sandMap.setAttribute('scale', 0);
+            }
+        });
+    }
+
     // 7. Parallax Effects (Clay style)
     const portfolioImages = document.querySelectorAll('.portfolio-image');
     const heroImageWrapper = document.querySelector('.hero-image-wrapper');
