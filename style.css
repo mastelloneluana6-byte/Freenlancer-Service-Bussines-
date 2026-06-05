@@ -484,65 +484,6 @@ a {
 }
 
 /* =========================================
-   Marquee Announcement Bar
-   ========================================= */
-.marquee-section {
-    width: 100%;
-    background-color: var(--clr-accent);
-    color: #fff;
-    padding: 1.2rem 0;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    white-space: nowrap;
-    transform: rotate(-1.5deg) scale(1.02); /* Slight angle for edgy premium look */
-    margin: 4rem 0 2rem 0; /* Space between hero and portfolio */
-    box-shadow: 0 10px 30px rgba(255, 42, 122, 0.2);
-    z-index: 10;
-}
-
-.marquee-track {
-    display: flex;
-    width: fit-content;
-    animation: scroll-marquee 25s linear infinite;
-}
-
-.marquee-track:hover {
-    animation-play-state: paused;
-}
-
-.marquee-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    padding-right: 3rem; /* Must exactly match gap for perfect looping */
-}
-
-.marquee-content span {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.marquee-content .dot {
-    font-size: 1.5rem;
-    color: rgba(255,255,255,0.5);
-}
-
-@keyframes scroll-marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@media (max-width: 992px) {
-    .marquee-section {
-        margin: 2rem 0 6rem 0; /* Adjust spacing specifically for mobile */
-        transform: rotate(-2.5deg) scale(1.05); /* Slightly steeper angle on mobile */
-    }
-}
-
-/* =========================================
    Portfolio / Featured Work Section
    ========================================= */
 .portfolio {
