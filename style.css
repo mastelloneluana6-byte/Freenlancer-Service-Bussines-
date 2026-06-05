@@ -268,6 +268,25 @@ a {
     pointer-events: auto;
 }
 
+.mega-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10001;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mega-close-btn:hover {
+    color: var(--clr-accent);
+    transform: scale(1.1);
+}
+
 .mega-menu-content {
     display: flex;
     justify-content: space-between;

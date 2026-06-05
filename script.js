@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1.5 Mega Menu Toggle
     const megaMenuBtn = document.getElementById('megaMenuBtn');
     const megaMenu = document.getElementById('megaMenu');
+    const megaCloseBtn = document.getElementById('megaCloseBtn');
     const megaLinks = document.querySelectorAll('.mega-link');
 
     if (megaMenuBtn && megaMenu) {
@@ -28,6 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = ''; // Restore scrolling
             }
         });
+
+        if (megaCloseBtn) {
+            megaCloseBtn.addEventListener('click', () => {
+                megaMenu.classList.remove('open');
+                megaMenuBtn.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        }
 
         megaLinks.forEach(link => {
             link.addEventListener('click', () => {
