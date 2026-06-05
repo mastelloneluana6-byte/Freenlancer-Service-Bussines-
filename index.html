@@ -18,15 +18,36 @@
             <a href="#" class="logo" style="display: flex; align-items: center; justify-content: center; height: 40px; width: 120px;">
                 <img src="logo_transparent.png" alt="Sarah Flynn" style="height: 160px; object-fit: contain; transform: scale(1.2);">
             </a>
-            <div class="nav-links">
-                <a href="#portfolio">Work</a>
-                <a href="#clients">Clients</a>
-                <a href="#services">Services</a>
-                <a href="#contact">About</a>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1.5rem;">
+                <a href="#contact" class="btn btn-pill btn-premium" id="navBookBtn">Book Your Call</a>
+                <button class="mega-menu-btn" id="megaMenuBtn" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-            <a href="#contact" class="btn btn-pill btn-premium">Book Your Call</a>
         </div>
     </nav>
+
+    <!-- Mega Menu Overlay -->
+    <div class="mega-menu-overlay" id="megaMenu">
+        <div class="container mega-menu-content">
+            <div class="mega-menu-links">
+                <a href="#portfolio" class="mega-link"><span>01</span> Work</a>
+                <a href="#clients" class="mega-link"><span>02</span> Clients</a>
+                <a href="#services" class="mega-link"><span>03</span> Services</a>
+                <a href="#contact" class="mega-link"><span>04</span> Contact</a>
+            </div>
+            <div class="mega-menu-info">
+                <h3>Let's create something extraordinary.</h3>
+                <a href="mailto:hello@sarahflynn.com" class="mega-email">hello@sarahflynn.com</a>
+                <div class="mega-socials">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="hero" id="hero">
         <div class="hero-bg"></div>

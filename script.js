@@ -10,6 +10,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 1.5 Mega Menu Toggle
+    const megaMenuBtn = document.getElementById('megaMenuBtn');
+    const megaMenu = document.getElementById('megaMenu');
+    const megaLinks = document.querySelectorAll('.mega-link');
+
+    if (megaMenuBtn && megaMenu) {
+        megaMenuBtn.addEventListener('click', () => {
+            const isOpen = megaMenu.classList.contains('open');
+            if (!isOpen) {
+                megaMenu.classList.add('open');
+                megaMenuBtn.classList.add('open');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                megaMenu.classList.remove('open');
+                megaMenuBtn.classList.remove('open');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+
+        megaLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                megaMenu.classList.remove('open');
+                megaMenuBtn.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
     // 2. Intersection Observer for Scroll Animations
     // This adds the 'active' class to elements as they scroll into view
     
