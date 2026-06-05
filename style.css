@@ -375,6 +375,7 @@ a {
     .hero-image-wrapper {
         margin-left: 0;
         margin-top: 10rem; /* Push image slightly further down */
+        transform: none !important; /* Forces the image to stand still and ignore Javascript parallax */
     }
     .hero-exact-image {
         height: 350px; /* Smaller image on mobile */
