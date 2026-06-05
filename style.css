@@ -384,6 +384,33 @@ a {
         transition: none !important; /* Disable animations */
         box-shadow: none !important; /* Remove shadow if it looks weird */
     }
+
+    /* Animated text effect for the Hero H1 */
+    .hero h1 {
+        background: linear-gradient(
+            to right,
+            #17181c 20%,
+            var(--clr-accent) 50%,
+            #17181c 80%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: text-wave-mobile 4s linear infinite;
+    }
+
+    .hero h1 span {
+        -webkit-text-fill-color: transparent; /* Ensures span matches the wave */
+    }
+    
+    .hero h1 span::after {
+        display: none; /* Hide the underline so it doesn't break the wave effect */
+    }
+
+    @keyframes text-wave-mobile {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+    }
 }
 
 /* =========================================
