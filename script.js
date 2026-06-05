@@ -153,7 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = logoGrid.getBoundingClientRect();
             const windowHeight = window.innerHeight;
             
-            let percentage = 1 - (rect.top - windowHeight / 3) / (windowHeight / 1.5);
+            // Resolves much faster: fully resolved when it's just 20% up from the bottom of the screen
+            let percentage = 1 - (rect.top - windowHeight * 0.8) / (windowHeight * 0.3);
             percentage = Math.max(0, Math.min(1, percentage));
             
             const distortion = 1 - percentage;
