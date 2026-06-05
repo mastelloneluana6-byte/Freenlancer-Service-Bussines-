@@ -535,8 +535,24 @@ a {
 
 @media (max-width: 992px) {
     .portfolio-grid-new {
-        grid-template-columns: 1fr;
-        gap: 3rem; /* Extra space between items on mobile */
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        /* To ensure the first card starts at the edge nicely, we can add a little padding */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .portfolio-grid-new::-webkit-scrollbar {
+        display: none; /* Safari/Chrome */
+    }
+    .portfolio-card {
+        flex: 0 0 85%; /* Each card takes up 85% of the screen width */
+        scroll-snap-align: center;
     }
     .portfolio-header {
         flex-direction: column;
