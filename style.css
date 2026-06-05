@@ -181,6 +181,11 @@ a {
     box-shadow: var(--shadow-sm);
 }
 
+#navBookBtn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
