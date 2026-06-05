@@ -374,7 +374,7 @@ a {
     }
     .hero-image-wrapper {
         margin-left: 0;
-        margin-top: 8rem; /* Push image much further down to avoid the logo */
+        margin-top: 10rem; /* Push image slightly further down */
     }
     .hero-exact-image {
         height: 350px; /* Smaller image on mobile */
