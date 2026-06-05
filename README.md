@@ -3,7 +3,7 @@
 
 > [!IMPORTANT]  
 > 🌍 **BEZOEKERS & KLANTEN:** Klik op de link hieronder om de echte, werkende website te bekijken! Dit is slechts de 'achterkant' met de code.
-> 👉 **[BEKIJK DE LIVE WEBSITE HIER](https://mastelloneluana6-byte.github.io/freelancer-service/)** 👈
+> 👉 **[BEKIJK DE LIVE WEBSITE HIER](https://freenlancer-service-bussines.vercel.app/)** 👈
 
 Welcome to the **Sarah Flynn Design** portfolio source code. This project features a clean, highly aesthetic, and premium portfolio layout designed for a creative professional.
 
