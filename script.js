@@ -159,17 +159,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const distortion = 1 - percentage;
             
             // Massive scale to scatter particles far away
-            const maxScale = 500; 
+            const maxScale = 400; 
             // Vertical blur to make them look like blowing sand
             const maxBlurY = 20;
+            // Float distance to make it 'zweven' (float) upwards
+            const maxTranslateY = 150;
             
             if (distortion > 0) {
                 // Don't fade out entirely, let the particles be visible
                 logoGrid.style.opacity = percentage + 0.3; 
+                logoGrid.style.transform = `translateY(${distortion * maxTranslateY}px)`;
                 sandMap.setAttribute('scale', distortion * maxScale);
                 sandBlur.setAttribute('stdDeviation', `0 ${distortion * maxBlurY}`);
             } else {
                 logoGrid.style.opacity = 1;
+                logoGrid.style.transform = 'translateY(0)';
                 sandMap.setAttribute('scale', 0);
                 sandBlur.setAttribute('stdDeviation', '0 0');
             }
