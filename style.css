@@ -537,6 +537,7 @@ a {
     .portfolio {
         height: 300vh; /* Create vertical scroll room */
         padding: 0;
+        margin-top: 8rem; /* Creates massive breathing room between Hero and Portfolio */
     }
     .portfolio-sticky {
         position: sticky;
