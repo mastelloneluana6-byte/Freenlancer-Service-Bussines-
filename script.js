@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Select elements to animate
-    const animatedElements = document.querySelectorAll('.reveal-text, .fade-in-up, .slide-in-left');
+    const animatedElements = document.querySelectorAll('.reveal-text, .fade-in-up, .slide-in-left, .slide-in-right');
     
     animatedElements.forEach(el => {
         observer.observe(el);

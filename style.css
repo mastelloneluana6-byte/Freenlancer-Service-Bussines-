@@ -504,7 +504,7 @@ a {
 }
 
 .portfolio-title-col h2 {
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: clamp(1.8rem, 3.5vw, 3rem); /* Shrunk down to match Hero H1 exactly */
     letter-spacing: -0.04em;
     line-height: 1.1;
     margin-top: 1rem;
@@ -1511,6 +1511,18 @@ a {
 @keyframes slideUpFade {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom Slide In Right Animation */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-in-right.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* =========================================
