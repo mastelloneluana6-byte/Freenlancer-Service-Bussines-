@@ -293,9 +293,12 @@
             <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="displacement" />
         </filter>
-        <filter id="sand-resolve">
-            <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" result="noise" />
+        <filter id="sand-resolve" x="-50%" y="-100%" width="200%" height="300%">
+            <!-- Extreme high frequency noise for tiny individual sand grains -->
+            <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="4" result="noise" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" id="sandMap" />
+            <!-- Vertical directional blur to make sand look like it's blowing -->
+            <feGaussianBlur in="sandMap" stdDeviation="0 0" id="sandBlur" />
         </filter>
     </svg>
 

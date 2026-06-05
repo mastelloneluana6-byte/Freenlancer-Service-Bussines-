@@ -144,31 +144,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Sand Resolve Effect on Logos
     const logoGrid = document.querySelector('.logo-grid');
     const sandMap = document.getElementById('sandMap');
+    const sandBlur = document.getElementById('sandBlur');
 
-    if (logoGrid && sandMap) {
+    if (logoGrid && sandMap && sandBlur) {
         logoGrid.style.filter = "url('#sand-resolve')";
         
         window.addEventListener('scroll', () => {
             const rect = logoGrid.getBoundingClientRect();
             const windowHeight = window.innerHeight;
             
-            // Calculate percentage based on how far the grid is scrolled into view
-            // Starts resolving when top hits the bottom of the screen, fully resolved midway up
             let percentage = 1 - (rect.top - windowHeight / 3) / (windowHeight / 1.5);
             percentage = Math.max(0, Math.min(1, percentage));
             
-            // Inverse: 1 means fully distorted (sand), 0 means resolved
             const distortion = 1 - percentage;
             
-            const maxScale = 120; // Maximum grain spread
+            // Massive scale to scatter particles far away
+            const maxScale = 500; 
+            // Vertical blur to make them look like blowing sand
+            const maxBlurY = 20;
             
-            // Only update DOM if there's distortion to save performance
             if (distortion > 0) {
-                logoGrid.style.opacity = percentage;
+                // Don't fade out entirely, let the particles be visible
+                logoGrid.style.opacity = percentage + 0.3; 
                 sandMap.setAttribute('scale', distortion * maxScale);
+                sandBlur.setAttribute('stdDeviation', `0 ${distortion * maxBlurY}`);
             } else {
                 logoGrid.style.opacity = 1;
                 sandMap.setAttribute('scale', 0);
+                sandBlur.setAttribute('stdDeviation', '0 0');
             }
         });
     }
