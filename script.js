@@ -245,4 +245,42 @@ document.addEventListener('DOMContentLoaded', () => {
             customCursor.classList.remove('hovering');
         });
     });
+
+    // 10. Horizontal Scroll on Mobile for Portfolio
+    const portfolioSection = document.querySelector('.portfolio');
+    const portfolioGrid = document.querySelector('.portfolio-grid-new');
+
+    if (portfolioSection && portfolioGrid) {
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 992) {
+                const sectionTop = portfolioSection.offsetTop;
+                const sectionHeight = portfolioSection.offsetHeight;
+                const windowScroll = window.scrollY;
+                
+                // If we've scrolled past the top of the portfolio section
+                if (windowScroll >= sectionTop && windowScroll <= (sectionTop + sectionHeight - window.innerHeight)) {
+                    const scrollDistance = windowScroll - sectionTop;
+                    const maxScroll = sectionHeight - window.innerHeight;
+                    const scrollPercentage = scrollDistance / maxScroll;
+                    
+                    const gridWidth = portfolioGrid.offsetWidth;
+                    const windowWidth = window.innerWidth;
+                    // Max translate should leave the last card visible at the end
+                    const maxTranslate = gridWidth - windowWidth + 40; 
+                    
+                    const translateValue = maxTranslate * scrollPercentage;
+                    portfolioGrid.style.transform = `translateX(-${translateValue}px)`;
+                } else if (windowScroll < sectionTop) {
+                    portfolioGrid.style.transform = `translateX(0px)`;
+                } else {
+                    const gridWidth = portfolioGrid.offsetWidth;
+                    const windowWidth = window.innerWidth;
+                    const maxTranslate = gridWidth - windowWidth + 40;
+                    portfolioGrid.style.transform = `translateX(-${maxTranslate}px)`;
+                }
+            } else {
+                portfolioGrid.style.transform = `translateX(0px)`;
+            }
+        });
+    }
 });

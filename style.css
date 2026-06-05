@@ -534,33 +534,46 @@ a {
 }
 
 @media (max-width: 992px) {
+    .portfolio {
+        height: 300vh; /* Create vertical scroll room */
+        padding: 0;
+    }
+    .portfolio-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center; /* Center vertically */
+    }
+    .portfolio-sticky .container {
+        width: 100%;
+    }
     .portfolio-grid-new {
         display: flex;
         flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
         gap: 1.5rem;
-        padding-bottom: 2rem;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        /* To ensure the first card starts at the edge nicely, we can add a little padding */
+        width: max-content; /* Allow it to grow horizontally beyond viewport */
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-    .portfolio-grid-new::-webkit-scrollbar {
-        display: none; /* Safari/Chrome */
+        will-change: transform;
     }
     .portfolio-card {
-        flex: 0 0 85%; /* Each card takes up 85% of the screen width */
-        scroll-snap-align: center;
+        width: 85vw; /* Each card takes up 85% of the screen width */
+        flex-shrink: 0;
     }
     .portfolio-header {
         flex-direction: column;
         text-align: center;
         align-items: center;
+        margin-bottom: 2rem;
     }
     .portfolio-desc-col {
         padding-top: 2rem;
+    }
+    .portfolio-footer {
+        display: none; /* Hide button on mobile or move it out of track */
     }
 }
 
