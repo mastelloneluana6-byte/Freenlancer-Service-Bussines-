@@ -385,8 +385,8 @@ a {
         box-shadow: none !important; /* Remove shadow if it looks weird */
     }
 
-    /* Animated text effect for the Hero H1 */
-    .hero h1 {
+    /* Animated text effect for the Hero H1 and Portfolio H2 */
+    .hero h1, .portfolio-title-col h2 {
         background: linear-gradient(
             to right,
             #17181c 20%,
@@ -399,11 +399,11 @@ a {
         animation: text-wave-mobile 4s linear infinite;
     }
 
-    .hero h1 span {
+    .hero h1 span, .portfolio-title-col h2 span {
         -webkit-text-fill-color: transparent; /* Ensures span matches the wave */
     }
     
-    .hero h1 span::after {
+    .hero h1 span::after, .portfolio-title-col h2 span::after {
         display: none; /* Hide the underline so it doesn't break the wave effect */
     }
 
