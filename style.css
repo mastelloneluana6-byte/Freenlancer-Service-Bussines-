@@ -366,6 +366,7 @@ a {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
+        padding-top: 120px; /* Give more padding from the top of the screen */
     }
     .hero-content {
         margin-top: 3rem;
@@ -373,7 +374,7 @@ a {
     }
     .hero-image-wrapper {
         margin-left: 0;
-        margin-top: 2rem; /* Push image down from navbar */
+        margin-top: 5rem; /* Push image much further down to avoid the logo */
     }
     .hero-exact-image {
         height: 350px; /* Smaller image on mobile */
